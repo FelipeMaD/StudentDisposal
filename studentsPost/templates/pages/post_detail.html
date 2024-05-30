@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ post.title }}</title>
-</head>
-<body>
-    <h1>{{ post.nome }}</h1>
-    <h1>{{ post.matricula }}</h1>
-    <h1>{{ post.sobrenome }}</h1>
-    <p> {{ post.descricao }} </p>
-    {% if post.image %}
-        <img src="{{ post.image.url }}" alt="{{ post.nome
-        }}">
-    {% endif %}
-</body>
-</html>
+{% extends 'base.html' %} {% block title %}Detalhes do Estudante: {{ object.nome
+}}{% endblock %} 
+{% block content %}
+    <h2>{{ object.nome }}</h2>
+    <h2>{{ object.sobrenome }}</h2>
+    <h2>{{ object.serie }}</h2>
+    <p>{{ object.descricao }}</p>
+    <a href="{% url 'post_update' pk=object.pk %}">Editar</a>
+    <form action="{% url 'post_delete' pk=object.pk %}" method="post" style="display: inline">
+        {% csrf_token %}
+        <button type="submit">Excluir</button>
+    </form>
+{% endblock %}

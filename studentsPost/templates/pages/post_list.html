@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" >
-    <title> Lista de Posts </title>
+    <meta charset="UTF-8">
+    <title>Lista de Estudantes</title>
 </head>
 <body>
-    <h1>Lista de Posts </h1>
+    <h1>Lista de Estudantes</h1>
+    <a href="{% url 'post_create' %}" class="botao criar">Criar</a>
     <ul>
         {% for post in posts %}
-            <li><a href="{% url 'post_detail' pk=post.pk %}"> {{ post.nome }}</a></li>
+            <li> NOME: {{ post.nome }} - MATRICULA {{ post.matricula }}
+                <a href="{% url 'post_detail' post.pk %}">Detalhes</a>
+                <a href="{% url 'post_update' post.pk %}">Editar</a>
+                <a href="{% url 'post_delete' post.pk %}">Excluir</a>
+            </li>
         {% endfor %}
     </ul>
 </body>
