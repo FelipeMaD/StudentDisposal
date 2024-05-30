@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }}</title>
+</head>
+<body>
+    <h1>{{ post.nome }}</h1>
+    <h1>{{ post.matricula }}</h1>
+    <h1>{{ post.sobrenome }}</h1>
+    <p> {{ post.descricao }} </p>
+    {% if post.image %}
+        <img src="{{ post.image.url }}" alt="{{ post.nome
+        }}">
+    {% endif %}
+</body>
+</html>
