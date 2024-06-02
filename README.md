@@ -1,5 +1,5 @@
 # 📚 StudentDisposal
-Disposição de dados de matrícula de alunos em um sistema visualmente agradável
+Disposição de dados de alunos em um sistema visualmente agradável, com marcação de presença e acompanhamento com sistema métrico a partir de dados recebidos por sensores físicos (ARDUÍNO)
 
 # 🛠 Desenvolvedores
 - Felipe Marinho
